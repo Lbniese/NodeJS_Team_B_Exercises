@@ -15,7 +15,7 @@ const friends = [];
 
 // What a lonely array. Add at least 3 friend objects to it.  
 
-friends.push("Joe","Mama","Kenzyy","P-Dawg");
+friends.push("Anna","Anne","Annie");
 
 console.log(friends);
 
@@ -73,7 +73,11 @@ const lettersExpanded = ["a","b","c", "d", "e", "f", "g", "h"];
 // log every second char in the array starting from b
 
 //console.log(lettersExpanded.filter((_,i) => i&1));
-console.log(lettersExpanded.filter((x, i) => i % 2));
+//console.log(lettersExpanded.filter((x, i) => i % 2));
+
+for (let i = 1; i < lettersExpanded.length; i += 2) {
+    console.log(lettersExpanded[i]);
+}
 
 // --------------------------------------
 // Exercise 8 - For loop and if statement
