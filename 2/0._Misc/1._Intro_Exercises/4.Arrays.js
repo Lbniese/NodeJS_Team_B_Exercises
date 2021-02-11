@@ -89,7 +89,7 @@ const discardedNumbers = [];
 // log the element if the number is above 6 or below 0
 // else push them to the array discardedNumbers
 
-output = numbers.filter((element) => {
+let output = numbers.filter((element) => {
     if (element > 6 || element < 0) {
         console.log(element);
     } else {
