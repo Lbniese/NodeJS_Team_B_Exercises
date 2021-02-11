@@ -15,7 +15,7 @@ console.log(myObj.message);
 
 // Create an object that has your name and age. 
 
-const meObj = {"name": "Lukas", "age": "23"};
+const meObj = {"name": "Lukas", "age": 23};
 
 console.log(meObj);
 
