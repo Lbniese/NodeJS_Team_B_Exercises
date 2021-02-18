@@ -1,39 +1,47 @@
-//import express
-const express = require("express");
+// import express
+const express = require('express');
 // instantiate express
 const app = express();
+//
+const port = 5000;
 
 // hard core persons
 const persons = [
   {
     id: 1,
-    name: "Lukas",
+    name: 'Lukas',
   },
   {
     id: 2,
-    name: "Mikkel",
+    name: 'Mikkel',
   },
   {
     id: 3,
-    name: "Peter",
+    name: 'Peter',
   },
 ];
 
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
   res.send({
     message:
-      "Visit /persons for all persons or /persons/id for specific person",
+      'Visit /persons for all persons or /persons/id for specific person',
   });
 });
 
-app.get("/persons", (req, res) => {
+app.get('/persons', (req, res) => {
   res.send(persons);
 });
 
-app.get("/persons/:id", (req, res) => {
-  let personsList = persons.filter((person) => person.id == req.params.id);
+app.get('/persons/:id', (req, res) => {
+  const personsList = persons.filter((person) => person.id === req.params.id);
   res.send(personsList);
 });
 
-//listen to port 5000
-app.listen(5000);
+// listen to a port
+app.listen(port, (error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(`Server listening on ${port}!`);
+  }
+});
