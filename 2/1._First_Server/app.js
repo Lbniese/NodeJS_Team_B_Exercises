@@ -22,7 +22,7 @@ const persons = [
 app.get("/", (req, res) => {
   res.send({
     message:
-      "Visit /persons for all persons or /persons/id for specific perons",
+      "Visit /persons for all persons or /persons/id for specific person",
   });
 });
 
