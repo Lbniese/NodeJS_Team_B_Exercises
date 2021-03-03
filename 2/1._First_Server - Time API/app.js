@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 // define which port to listen on
 const port = 5000;
+// software version number
+const version = "1.0.1";
 
 app.get('/', (req, res) => {
   res.send({ greetings: 'Welcome' });
@@ -29,6 +31,28 @@ app.get('/month', (req, res) => {
   const month = new Date().toLocaleDateString('default', { month: 'long' });
   res.send({ month: `${month}` });
 });
+
+// create a route called about that serves a hardcoded version number in a string
+app.get('/about', (req, res) => {
+  res.send({version: `${version}`});
+})
+
+app.get('/page', (req, res) => {
+  res.send("<h1></h1>");
+})
+
+const failures = ["mislick", "falling down", "skateboard accident", "tiktok fail"];
+
+// loop through this array using map print out each element
+// failures.map((failure, index) => console.log(failure, index));
+
+const newFailures = failures.map((failure) => {
+  return { failure, hilarityLevel: 5};
+});
+
+// failures[1] = "Charlie Chaplin fall";
+
+console.log(newFailures.slice());
 
 // listen to a port and start web server
 app.listen(port, (error) => {
