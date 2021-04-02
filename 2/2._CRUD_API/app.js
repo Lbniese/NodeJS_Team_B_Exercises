@@ -3,7 +3,7 @@ const express = require('express');
 // instantiate express
 const app = express();
 // server port to listen to
-const port = 5000;
+const port = process.env.PORT || 5000;
 // use body-parser
 app.use(express.json());
 
@@ -81,18 +81,14 @@ app.post('/people/', (req, res) => {
   
   // create new id (find max of itemIds and +1)
   let newId = itemIds.length  > 0 ? Math.max.apply(Math, itemIds) + 1 : 1;
-  // console.log("newId : ", newId);
- 
-  // console.log("req.body.name: ", req.body.name);
 
   //create object of new item
   let newItem = { id: newId, name: req.body.name};
 
-  // console.log("new item: ", newItem);
-
   // push new item object to data array
   data.push(newItem);
 
+  // send status code 201 (created)
   res.status(201).json(newItem);
 });
 
