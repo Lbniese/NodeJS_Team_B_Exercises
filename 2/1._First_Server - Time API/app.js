@@ -22,7 +22,6 @@ app.get('/time', (req, res) => {
 app.get('/day', (req, res) => {
   const dayNum = new Date().toLocaleDateString('default', { day: 'numeric' });
   const dayName = new Date().toLocaleDateString('default', { weekday: 'long' });
-  // const day = new Date().getDay();
   res.send({ number: `${dayNum}`, name: `${dayName}` });
 });
 
